@@ -1,160 +1,185 @@
-# Veridata — Real-World Data Infrastructure for AI
+# Incozent Technologies — Real-World Data Infrastructure for AI
 
-A structured, conversion-oriented marketing website for a company that helps AI teams design, collect, curate, annotate, quality-control and deliver real-world datasets (facial/biometric, computer vision, image, video, egocentric, robotics, autonomous driving, human activity, and custom data).
+[![Website](https://img.shields.io/badge/Status-Active-brightgreen)](https://github.com/chittatosha-mohanta/incozent_technologies)
+[![Founder](https://img.shields.io/badge/Founder-Chittatosha%20Mohanta-blue)](https://github.com/chittatosha-mohanta)
+[![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Next.js%20%7C%20TailwindCSS%20v4-blueviolet)](https://github.com/chittatosha-mohanta/incozent_technologies)
 
-The site follows a **layered information architecture** — core conversion pages, supporting trust pages, detailed solution pages, forms, and lightweight future-facing catalog/resources pages — instead of dumping all content into one long homepage.
-
----
-
-## 1. Completed Features
-
-### Structure & Navigation
-- Shared, dynamically-rendered header (with **Solutions** and **Industries** dropdowns) and footer, injected on every page by `js/layout.js` from `js/config.js` + `content/solutions-data.js`. Mobile hamburger menu with full nav.
-- Central config file (`js/config.js`) — company name, tagline, email, phone, location, founder placeholder, geography positioning. All pages reference it instead of hardcoding.
-- Content data layer (`content/solutions-data.js`) — the 9 solutions and 8 industries are defined **once** and drive: the nav dropdowns, homepage capability cards, `/solutions` hub, and every individual solution page (via `js/solution-page.js`, a generic template renderer).
-
-### Pages Built (26 total)
-**Core conversion**
-- `index.html` — Homepage: hero, what-we-do + workflow, capabilities grid, 4 problem cards, 4 featured solutions + driving callout, facial/biometric spotlight, industries grid, India-first section, mini how-it-works, quality/privacy panels, pilot CTA, final CTA.
-- `request-dataset.html` — 6-step **Request a Dataset** form (contact → dataset type → requirements → quality → timeline → additional details + consent), writes to `dataset_requests` table.
-- `join-participant-network.html` — participant interest registration (non-sensitive fields only), writes to `participant_applications` table.
-- `pilot-program.html` — pilot explainer + pilot request form, writes to `pilot_requests` table.
-
-**Supporting trust pages**
-- `how-it-works.html` (full 10-step workflow), `data-quality.html`, `privacy-consent.html`, `about.html`, `faq.html` (accordion), `contact.html` (form → `contact_inquiries` table).
-
-**Detailed solution pages** (`/solutions/*.html`, one per capability, same template)
-- `facial-biometric-data.html`, `computer-vision-data.html`, `image-data.html`, `video-data.html`, `egocentric-data.html`, `robotics-physical-ai.html`, `autonomous-driving.html`, `human-activity.html`, `custom-data-collection.html`
-- Plus the hub: `solutions.html`
-
-**Lower-priority / future-facing**
-- `industries.html`, `data-catalog.html` (capability catalog labeled "Example Collection Specification" — explicitly **not** a marketplace, no fake inventory counts), `resources.html`, `privacy-policy.html`, `terms.html`, `cookie-policy.html`
-
-### Forms & Data (RESTful Table API)
-| Table | Used by | Purpose |
-|---|---|---|
-| `contact_inquiries` | `contact.html` | General business inquiries |
-| `dataset_requests` | `request-dataset.html` | Full 6-step dataset request specification |
-| `participant_applications` | `join-participant-network.html` | Non-sensitive participant interest registration |
-| `pilot_requests` | `pilot-program.html` | Pilot project requests |
-
-All four tables include a `status` field with the recommended lifecycle (`New → Under Review → Contacted → Qualified → Pilot → Converted → Closed`) so a future admin dashboard can manage submissions.
-
-### Safety / Compliance Guardrails Implemented
-- **No biometric upload anywhere on the site.** Every facial/biometric mention includes the disclaimer: *"Custom collection is available based on project requirements. No public biometric upload is required through this website."*
-- The Participant Network form explicitly collects **only** name, email, country, city, age range, languages, device type, availability, preferred categories, and consent-to-contact — no selfies, videos, biometric samples, or ID documents — with an explicit notice stating this.
-- Data Catalog page is clearly labeled a **capability catalog**, not a marketplace — every entry says "Example Collection Specification," no invented dataset counts or "available now" inventory.
-- Quality claims avoid fixed accuracy percentages; framed as "defined per project."
-- Privacy & Consent page states data is not collected speculatively — only under a defined project purpose and consent process.
+**Incozent Technologies** is a specialized data infrastructure and AI engineering company that helps teams design, collect, curate, annotate, quality-control, and deliver high-integrity real-world datasets for cutting-edge Artificial Intelligence, Computer Vision, and Physical AI models.
 
 ---
 
-## 2. Site Map / URLs
+## Table of Contents
+
+- [1. Company & Brand Overview](#1-company--brand-overview)
+- [2. Key Features & Visual Highlights](#2-key-features--visual-highlights)
+  - [Brand Identity & Custom Assets](#brand-identity--custom-assets)
+  - [3D AI Data Infrastructure Showcase](#3d-ai-data-infrastructure-showcase)
+  - [Animated Workflow Pipeline](#animated-workflow-pipeline)
+  - [Aceternity-Style Scroll Timeline](#aceternity-style-scroll-timeline)
+- [3. React / Next.js Subproject (`my-app/`)](#3-react--nextjs-subproject-my-app)
+- [4. Complete Website Architecture (26 Pages)](#4-complete-website-architecture-26-pages)
+- [5. Data Models & Form Ingestion](#5-data-models--form-ingestion)
+- [6. Safety, Privacy & Compliance Guardrails](#6-safety-privacy--compliance-guardrails)
+- [7. Project Directory Structure](#7-project-directory-structure)
+- [8. Getting Started & Running Locally](#8-getting-started--running-locally)
+
+---
+
+## 1. Company & Brand Overview
+
+- **Company Name**: Incozent Technologies
+- **Founder**: Chittatosha Mohanta
+- **Primary Inquiries**: `contact@incozent.com`
+- **Headquarters**: Bhubaneswar, Odisha, India (Global Delivery)
+- **Positioning**: Scalable, ethically-sourced human, computer vision, and physical AI datasets with strict quality verification and consent frameworks.
+
+---
+
+## 2. Key Features & Visual Highlights
+
+### Brand Identity & Custom Assets
+- Custom vector and raster assets organized under `assets/` and `solutions/assets/`.
+- Precision navbar lockup (`logo_navbar.png`, `logo_dark_pill.png`, and `logo_mark_white.png`) with clean typography.
+- Standardized `favicon.ico` and `favicon.png` across all root pages and subdirectories.
+- Global navigation injected dynamically across all pages using `js/layout.js` backed by configuration in `js/config.js`.
+
+### 3D AI Data Infrastructure Showcase
+- **Hero Visual (`assets/hero_data_pipeline.jpg`)**: Frontpage split-column layout featuring an ultra-crisp multimodal AI dataset ecosystem (neural network nodes, streaming data matrices, robotic sensor arrays, and biometric landmarks) set against a clean white background.
+- **Glassmorphic Metric Badges**: Floating micro-cards highlighting real-time metrics:
+  - *"99.4% Verified Accuracy"*
+  - *"10M+ Labeled Samples Delivered"*
+
+### Animated Workflow Pipeline
+- **Continuous Directional Motion**: In the "What We Do" workflow strip (`index.html`), step transition arrows feature an animated CSS wave (`@keyframes workflowFlow`) that pulses forward along the data pipeline without distracting color shifts.
+
+### Aceternity-Style Scroll Timeline
+- **Interactive Progress Beam (`how-it-works.html` & `js/timeline.js`)**: An interactive, scroll-linked progress indicator modeled after modern Framer Motion / Aceternity timeline components.
+- **Dynamic Gradient Line**: As the user scrolls through the 10-step data lifecycle, a glowing gradient beam tracks user scroll position, illuminating active milestone nodes and expanding content cards.
+
+---
+
+## 3. React / Next.js Subproject (`my-app/`)
+
+For modern React and Next.js applications, a full TypeScript + Tailwind CSS v4 + shadcn setup is included in the `my-app/` directory alongside standalone components in `components/ui/`:
+
+- **Component**: [`components/ui/timeline.tsx`](file:///Users/chittatoshamohanta/Downloads/code-sandbox-light-f16f8a2c-fb6b-4c96-b6d1-d8bcab429e26-main/components/ui/timeline.tsx)
+- **Demo**: [`components/ui/demo.tsx`](file:///Users/chittatoshamohanta/Downloads/code-sandbox-light-f16f8a2c-fb6b-4c96-b6d1-d8bcab429e26-main/components/ui/demo.tsx)
+- **Dependencies**: Framer Motion (`framer-motion`), Lucide Icons (`lucide-react`), Tailwind CSS v4.
+
+### Running the Next.js Application
+```bash
+cd my-app
+npm install
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the interactive React timeline and UI components.
+
+---
+
+## 4. Complete Website Architecture (26 Pages)
+
+The production marketing site is structured into distinct, high-converting static pages:
+
+### Core Conversion
+- `index.html` — Homepage with hero visual, animated workflow, capability cards, industry matrices, and pilot CTAs.
+- `request-dataset.html` — 6-step guided dataset specification and quotation workflow.
+- `join-participant-network.html` — Contributor community onboarding (strictly non-sensitive metadata).
+- `pilot-program.html` — Fast-track pilot evaluation request flow.
+
+### Trust & Operations
+- `how-it-works.html` — Comprehensive 10-stage dataset lifecycle with interactive scroll progress.
+- `data-quality.html` — Multi-stage human-in-the-loop and automated validation standards.
+- `privacy-consent.html` — GDPR, DPDP Act (India), and ethical consent protocols.
+- `about.html` — Mission, leadership, and operational capabilities.
+- `faq.html` — Accordion-driven answers to technical, commercial, and legal questions.
+- `contact.html` — Direct enterprise inquiries and consultation scheduling.
+
+### Capability & Solution Hubs (`/solutions/*.html`)
+- `solutions.html` — Main solutions directory.
+- `facial-biometric-data.html` — 2D/3D facial expression, liveness, and demographic balance datasets.
+- `computer-vision-data.html` — Object detection, semantic segmentation, and bounding box pipelines.
+- `image-data.html` — High-resolution studio, in-the-wild, and multi-spectral photography.
+- `video-data.html` — Multi-frame temporal annotation and action recognition.
+- `egocentric-data.html` — First-person view collection for AR/VR smart glasses and spatial AI.
+- `robotics-physical-ai.html` — Teleoperation demonstrations, tactile sensing, and manipulation feeds.
+- `autonomous-driving.html` — ADAS camera, LiDAR, and edge-case driving conditions.
+- `human-activity.html` — Complex pose estimation, sports analytics, and ergonomic telemetry.
+- `custom-data-collection.html` — Bespoke multi-modal collection workflows.
+
+### Catalog & Legal
+- `industries.html` — Automotive, Healthcare, Retail, Security, Consumer Tech, and Robotics focus areas.
+- `data-catalog.html` — Representative collection specifications (ethical showcase, no mock storefront inventory).
+- `resources.html` — Technical whitepapers and engineering guides.
+- `privacy-policy.html`, `terms.html`, `cookie-policy.html` — Legal governance documentation.
+
+---
+
+## 5. Data Models & Form Ingestion
+
+Forms connect seamlessly via RESTful endpoints (`/tables/{name}`) backed by `.tables/schema.json`:
+
+1. `contact_inquiries` — General enterprise consultations.
+2. `dataset_requests` — Deep technical specifications (modality, participants, volume, sensor setup, quality tolerance).
+3. `participant_applications` — Demographic and device profile registration.
+4. `pilot_requests` — Accelerated pilot project scopes.
+
+All schemas support a unified lifecycle:
+`New` → `Under Review` → `Contacted` → `Qualified` → `Pilot` → `Converted` → `Closed`.
+
+---
+
+## 6. Safety, Privacy & Compliance Guardrails
+
+- **Zero Speculative Biometric Uploads**: The website intentionally does not feature public face/biometric upload mechanisms. All facial and biometric engagements are strictly offline, governed by formal consent contracts and ethical review boards.
+- **Minimal Contributor Data Collection**: Contributor onboarding collects only essential demographic bands, device categories, and contact information.
+- **Defensible Quality Claims**: Metrics and accuracy benchmarks are scoped per project SOP rather than generalized marketing claims.
+
+---
+
+## 7. Project Directory Structure
 
 ```
-/ (index.html)
-/solutions.html
-/solutions/facial-biometric-data.html
-/solutions/computer-vision-data.html
-/solutions/image-data.html
-/solutions/video-data.html
-/solutions/egocentric-data.html
-/solutions/robotics-physical-ai.html
-/solutions/autonomous-driving.html
-/solutions/human-activity.html
-/solutions/custom-data-collection.html
-/industries.html
-/how-it-works.html
-/data-quality.html
-/privacy-consent.html
-/pilot-program.html
-/about.html
-/faq.html
-/contact.html
-/request-dataset.html
-/join-participant-network.html
-/data-catalog.html
-/resources.html
-/privacy-policy.html
-/terms.html
-/cookie-policy.html
+.
+├── assets/                  # Brand logos, hero graphics, favicons, UI artwork
+├── components/ui/           # Reusable React/Next.js UI components (timeline.tsx, demo.tsx)
+├── content/                 # Single-source-of-truth solution & industry copy (solutions-data.js)
+├── css/                     # Production styling & animation system (style.css)
+├── js/                      # Dynamic layouts, form logic, scroll animations, configuration
+├── my-app/                  # Next.js App Router, Tailwind v4, and shadcn subproject
+├── solutions/               # 9 dedicated capability pages + sub-assets
+├── .tables/                 # Database table definitions (schema.json)
+├── serve.py                 # Lightweight Python dev server with cache-busting headers
+├── index.html               # Main homepage
+└── README.md                # Project documentation
 ```
 
-No query parameters are used; all pages are static routes.
-
 ---
 
-## 3. Data Models (Preview Table API)
+## 8. Getting Started & Running Locally
 
-Defined via `TableSchemaUpdate`, stored as rows via the RESTful Table API (`tables/{name}`):
-
-- **contact_inquiries**: full_name, email, company, subject, message, status
-- **dataset_requests**: full_name, company, business_email, job_title, country, dataset_types (array), other_dataset_type, num_participants, num_samples, duration, geography, demographics, environment, device, camera, resolution, frame_rate, metadata_requirements, annotation_requirements, quality_requirements, review_requirements, acceptance_criteria, start_date, delivery_date, urgency, project_description, technical_specifications, sop_availability, additional_requirements, consent_agree, status
-- **participant_applications**: full_name, email, country, city, age_range, languages, device_type, availability, preferred_categories (array), consent_future_contact, status
-- **pilot_requests**: full_name, company, email, dataset_type, project_description, timeline, status
-
-> ⚠️ Note: these tables currently hold **preview** data only (visible in the editor). If/when this site is Hosted-Deployed, the live database is separate — ask to seed or migrate rows into the live D1 database if needed once deployed.
-
----
-
-## 4. Project File Structure
-
+### 1. Vanilla Web Application
+To run the primary multi-page website locally:
+```bash
+python3 serve.py
 ```
-index.html
-solutions.html, industries.html, how-it-works.html, data-quality.html,
-privacy-consent.html, pilot-program.html, about.html, faq.html, contact.html,
-request-dataset.html, join-participant-network.html, data-catalog.html,
-resources.html, privacy-policy.html, terms.html, cookie-policy.html
+Visit [http://localhost:8080](http://localhost:8080) in any modern web browser.
 
-solutions/
-  facial-biometric-data.html ... custom-data-collection.html  (9 files, shared template)
-
-css/
-  style.css              — full design system (variables, header/nav, hero, cards,
-                            workflow strips, panels, forms, catalog, FAQ, footer)
-
-js/
-  config.js               — companyConfig (name, email, phone, location, etc.)
-  layout.js               — renders header/footer + mobile nav on every page
-  home.js                 — homepage dynamic sections (cards, workflow, industries)
-  solution-page.js        — generic renderer for /solutions/{slug}.html pages
-  request-dataset-form.js — 6-step form controller + submission
-  pilot-form.js           — pilot request form submission
-  participant-form.js     — participant registration form submission
-
-content/
-  solutions-data.js       — single source of truth: 9 solutions + 8 industries
-                            (title, icon, description, applications, categories,
-                            disclaimer, CTA label) — drives nav, homepage, and
-                            every solution page
+### 2. Next.js / React Subproject
+To run the Next.js interactive component suite:
+```bash
+cd my-app
+npm install
+npm run dev
 ```
-
-This mirrors the "content separate from components" principle from the spec: editing a solution's copy means editing one object in `content/solutions-data.js`, not hunting through 9 HTML files.
-
----
-
-## 5. Not Yet Implemented (by design, per spec)
-
-- **Admin/CRM dashboard** for reviewing submissions (lifecycle fields exist in the schema now so this can be added later without a data migration).
-- **Client / Project / Dataset / DatasetVersion / DataAsset / Annotation / QCResult / ConsentRecord / Delivery** entities — only the four "inbound form" tables were built for the MVP, per the spec's own phasing guidance ("do not implement a full dashboard yet").
-- Real biometric/video capture flows — intentionally excluded from this site; all facial/biometric collection is explicitly routed to an offline, consented, project-based process (this also keeps the site static and avoids the legal/technical risks of in-browser biometric capture).
-- Multi-language / i18n.
-- Search functionality across solutions/resources.
-
-## 6. Recommended Next Steps
-
-1. Replace placeholder values in `js/config.js` (`founderName`, `email`, `phone`, `linkedin`, `github`) with real details.
-2. Decide on and add a real logo asset (currently a simple icon mark).
-3. If this project needs to go live for real inbound leads, use **Hosted Deploy** (see Publish tab) so the four form tables provision a live D1 database — then periodically review submissions via the Table API or a future admin view.
-4. When ready to build the admin dashboard, add read/list views against the four existing tables using their `status` lifecycle field — no schema changes needed.
-5. Consider adding case studies / resource articles under `/resources.html` as the company matures (kept intentionally minimal for the MVP per the "not a mature operation" positioning).
+Visit [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## 7. Design System Notes
+## Contact & Enterprise Inquiries
 
-- Typography: Inter (Google Fonts).
-- Icons: Font Awesome 6 (CDN).
-- Primary color: `#2454ff` (blue), accent: `#0ea5a3` (teal), dark sections: `#0b1220`.
-- Fully responsive (grid collapses at 980px / 900px / 700px / 620px / 560px breakpoints); mobile nav collapses into a hamburger-triggered stacked menu.
-- One consistent primary CTA ("Request a Dataset") with contextual secondary CTAs per page, matching the spec's CTA strategy.
+For custom dataset engineering, pilot requests, and partnership queries:
+
+- **Website**: [incozent.com](mailto:contact@incozent.com)
+- **Email**: `contact@incozent.com`
+- **GitHub**: [github.com/chittatosha-mohanta/incozent_technologies](https://github.com/chittatosha-mohanta/incozent_technologies)
+- **Location**: Bhubaneswar, Odisha, India
