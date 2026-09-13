@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilot Program — Veridata</title>
+<meta name="description" content="Validate collection methodology, participant handling, metadata, annotation, quality control and delivery format with a small pilot before scaling.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Pilot Program</div>
+    <span class="eyebrow">Pilot Program</span>
+    <h1>Validate Before You Scale</h1>
+    <p>A pilot project lets you evaluate our collection methodology, participant handling, metadata, annotation, quality control and delivery format at small scale before committing to a full project.</p>
+    <div class="cta-row">
+      <a href="#pilot-form" class="btn btn-primary">Request a Pilot</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Process</span>
+      <h2 class="section-heading">How a Pilot Works</h2>
+    </div>
+    <div class="pilot-flow">
+      <span class="workflow-step">Requirements</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Pilot Design</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Small Collection</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Delivery</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Customer Review</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Improvement</span><i class="fa-solid fa-arrow-right workflow-arrow"></i>
+      <span class="workflow-step">Scale</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">What You Evaluate</span>
+      <h2 class="section-heading">What a Pilot Lets You Review</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-diagram-project" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Collection Methodology</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-chart-simple" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Data Quality</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-users" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Participant Handling</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-database" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Metadata</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-tag" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Annotation</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-list-check" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Quality Control</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-box-open" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Delivery Format</p></div>
+      <div class="card" style="text-align:center; padding:22px;"><i class="fa-solid fa-gears" style="color:var(--color-primary); font-size:20px; margin-bottom:10px;"></i><p style="font-weight:600; font-size:14.5px;">Operational Fit</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pilot request form -->
+<section class="section" id="pilot-form">
+  <div class="container">
+    <div class="form-shell">
+      <div class="form-step-label">Pilot Request</div>
+      <div class="form-step-title">Request a Pilot</div>
+      <form id="pilotForm">
+        <div class="field-row">
+          <div class="field-group">
+            <label for="pilot-name">Full Name</label>
+            <input type="text" id="pilot-name" required>
+          </div>
+          <div class="field-group">
+            <label for="pilot-company">Company</label>
+            <input type="text" id="pilot-company" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="pilot-email">Business Email</label>
+            <input type="email" id="pilot-email" required>
+          </div>
+          <div class="field-group">
+            <label for="pilot-dataset-type">Dataset Type</label>
+            <select id="pilot-dataset-type" required>
+              <option value="">Select one</option>
+              <option>Facial &amp; Biometric Data</option>
+              <option>Computer Vision Data</option>
+              <option>Image Data</option>
+              <option>Video Data</option>
+              <option>Egocentric Data</option>
+              <option>Robotics &amp; Physical AI</option>
+              <option>Autonomous Driving</option>
+              <option>Human Activity Data</option>
+              <option>Custom Data Collection</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="pilot-timeline">Expected Timeline <span class="optional">(optional)</span></label>
+          <input type="text" id="pilot-timeline" placeholder="e.g. Pilot within 4-6 weeks">
+        </div>
+        <div class="field-group">
+          <label for="pilot-desc">Project Description</label>
+          <textarea id="pilot-desc" rows="4" placeholder="Briefly describe your model, target data and pilot goals" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit Pilot Request</button>
+      </form>
+      <div class="form-success" id="pilot-success" style="display:none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Pilot Request Received</h3>
+        <p>Thank you — our team will review your request and follow up to scope the pilot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script src="js/pilot-form.js?v=3"></script>
+</body>
+</html>

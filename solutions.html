@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions — Veridata</title>
+<meta name="description" content="Explore Veridata's real-world data collection capabilities: facial, computer vision, image, video, egocentric, robotics, autonomous driving, human activity and custom collection.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Solutions</div>
+    <span class="eyebrow">Solutions</span>
+    <h1>Real-World Data Collection Capabilities</h1>
+    <p>Explore the data capabilities we design and collect around AI, computer vision, robotics, identity and multimodal model requirements. Every project begins with your specification — select a capability to learn more.</p>
+    <div class="cta-row">
+      <a href="request-dataset.html" class="btn btn-primary">Request a Dataset</a>
+      <a href="contact.html" class="btn btn-secondary">Discuss a Custom Collection</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3" id="all-solutions-grid"></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container text-center">
+    <span class="eyebrow">Not Sure Where to Start?</span>
+    <h2 class="section-heading" style="margin:0 auto;">Every Project Starts With a Conversation</h2>
+    <p class="section-sub" style="margin:16px auto 0;">Tell us about your model and target data, and we'll help determine the right collection approach — including whether a custom category is needed.</p>
+    <div class="cta-row" style="justify-content:center; margin-top:26px;">
+      <a href="request-dataset.html" class="btn btn-primary">Request a Dataset</a>
+      <a href="pilot-program.html" class="btn btn-secondary">Start a Pilot</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.getElementById("all-solutions-grid");
+  el.innerHTML = window.solutionsData.map(s => `
+    <a href="solutions/${s.slug}.html" class="card solution-card">
+      <div class="icon-badge"><i class="${s.icon}"></i></div>
+      <h3>${s.title}</h3>
+      <p>${s.shortDesc}</p>
+      <p class="applications"><b>Applications:</b> ${s.applications}</p>
+      <span class="card-link">View Solution <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+  `).join("");
+});
+</script>
+</body>
+</html>

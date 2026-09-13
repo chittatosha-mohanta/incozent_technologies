@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Participant Network — Veridata</title>
+<meta name="description" content="Register your interest in future data collection opportunities. This form does not collect biometric samples.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Join the Participant Network</div>
+    <span class="eyebrow">Participant Network</span>
+    <h1>Join the Participant Network</h1>
+    <p>Register your interest in future data collection opportunities. We'll reach out if a project matches your profile.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="info-box" style="max-width:760px; margin:0 auto 30px;">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>This registration form records interest in future opportunities. It does not collect biometric samples or guarantee participation in a project.</span>
+    </div>
+
+    <div class="form-shell">
+      <div class="form-step-title">Participant Registration</div>
+      <form id="participantForm">
+        <div class="field-row">
+          <div class="field-group"><label for="p-name">Full Name</label><input type="text" id="p-name" required></div>
+          <div class="field-group"><label for="p-email">Email</label><input type="email" id="p-email" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label for="p-country">Country</label><input type="text" id="p-country" required></div>
+          <div class="field-group"><label for="p-city">City</label><input type="text" id="p-city" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="p-age">Age Range</label>
+            <select id="p-age" required>
+              <option value="">Select one</option>
+              <option>18–24</option>
+              <option>25–34</option>
+              <option>35–44</option>
+              <option>45–54</option>
+              <option>55–64</option>
+              <option>65+</option>
+            </select>
+          </div>
+          <div class="field-group"><label for="p-languages">Languages Spoken</label><input type="text" id="p-languages" placeholder="e.g. Hindi, English"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label for="p-device">Device Type</label><input type="text" id="p-device" placeholder="e.g. Android smartphone"></div>
+          <div class="field-group"><label for="p-availability">Availability</label><input type="text" id="p-availability" placeholder="e.g. weekday evenings"></div>
+        </div>
+        <div class="field-group">
+          <label>Preferred Collection Categories <span class="optional">(optional)</span></label>
+          <div class="checkbox-grid" id="participant-categories-grid"></div>
+        </div>
+        <label class="consent-checkbox">
+          <input type="checkbox" id="p-consent" required>
+          <span>I consent to being contacted about future data collection opportunities that may match my profile.</span>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Register Interest</button>
+      </form>
+      <div class="form-success" id="participant-success" style="display:none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Registration Received</h3>
+        <p>Thank you for your interest. We'll be in touch if a suitable project opportunity comes up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script src="js/participant-form.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Veridata</title>
+<meta name="description" content="Veridata is building an India-first real-world data infrastructure company for AI teams that require custom, consented and quality-controlled datasets.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+    <span class="eyebrow">About</span>
+    <h1>Building Real-World Data Infrastructure for AI</h1>
+    <p>We are building an India-first real-world data infrastructure company for AI teams that require custom, consented and quality-controlled datasets.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="panel">
+        <h3><i class="fa-solid fa-bullseye"></i>Mission</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">To help AI companies get the real-world data their models need — collected responsibly, curated carefully and delivered reliably.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-eye"></i>Vision</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">A world where AI teams can access diverse, real-world, consented data as easily as they access compute — without compromising on privacy or quality.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-hammer"></i>What We Are Building</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">A structured operating model for real-world data collection — spanning recruitment, collection, curation, annotation, quality control and privacy-aware delivery — built around each customer's specification.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-globe"></i>Why Real-World Data Matters</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">Public and synthetic datasets often fail to reflect a model's actual target users, devices, geography or environment. Real-world, purpose-collected data closes that gap.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-map-location-dot"></i>Why India</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">India offers an unusually broad range of demographic, cultural, environmental, urban, rural, mobility and device conditions — a strong foundation for building a collection operating model, with future expansion in mind.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-layer-group"></i>Data Philosophy</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">Data should be designed around the model, not the other way around. Every project starts with your requirement, not a pre-existing inventory.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-medal"></i>Quality Philosophy</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">Quality criteria are defined per project and validated at every pipeline stage — not promised as a fixed, universal number.</p>
+      </div>
+      <div class="panel">
+        <h3><i class="fa-solid fa-user-shield"></i>Privacy Philosophy</h3>
+        <p style="color:var(--color-ink-soft); font-size:15px;">Human and biometric data collection requires a defined purpose and informed consent before it begins — not as an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="card" style="max-width:640px; margin:0 auto; text-align:center; padding:40px;">
+      <div style="width:72px; height:72px; border-radius:50%; background:var(--color-primary-soft); display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-size:26px; color:var(--color-primary);">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <h3 style="font-size:19px;" id="founder-name-slot">[FOUNDER NAME]</h3>
+      <p style="color:var(--color-ink-soft); font-size:14.5px; margin-top:6px;">Founder</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center">
+    <span class="eyebrow">Get in Touch</span>
+    <h2 class="section-heading" style="margin:0 auto;">Want to Learn More?</h2>
+    <div class="cta-row" style="justify-content:center; margin-top:26px;">
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      <a href="request-dataset.html" class="btn btn-secondary">Request a Dataset</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.getElementById("founder-name-slot");
+  if (el && window.companyConfig) el.textContent = window.companyConfig.founderName;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Dataset — Incozent Technologies</title>
+<meta name="description" content="Tell us about your AI project's data requirements and we'll help design the right collection approach.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Request a Dataset</div>
+    <span class="eyebrow">Request a Dataset</span>
+    <h1>Tell Us What Data Your AI System Needs</h1>
+    <p>Answer a few short steps about your project. We'll follow up to scope the right collection approach — including whether a pilot makes sense first.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="form-shell">
+
+      <div class="form-progress" id="form-progress"></div>
+
+      <form id="datasetForm">
+
+        <!-- STEP 1 -->
+        <div class="form-step active" data-step="1">
+          <div class="form-step-label">Step 1 of 6</div>
+          <div class="form-step-title">Contact Information</div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-name">Full Name</label><input type="text" id="q-name" required></div>
+            <div class="field-group"><label for="q-company">Company</label><input type="text" id="q-company" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-email">Business Email</label><input type="email" id="q-email" required></div>
+            <div class="field-group"><label for="q-title">Job Title</label><input type="text" id="q-title"></div>
+          </div>
+          <div class="field-group"><label for="q-country">Country</label><input type="text" id="q-country" required></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" data-step="2">
+          <div class="form-step-label">Step 2 of 6</div>
+          <div class="form-step-title">Dataset Type</div>
+          <p style="color:var(--color-ink-soft); font-size:14px; margin-bottom:16px;">Select all data types relevant to your project.</p>
+          <div class="checkbox-grid" id="dataset-type-grid"></div>
+          <div class="field-group" style="margin-top:18px;">
+            <label for="q-other-type">If "Other", please specify <span class="optional">(optional)</span></label>
+            <input type="text" id="q-other-type">
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" data-step="3">
+          <div class="form-step-label">Step 3 of 6</div>
+          <div class="form-step-title">Dataset Requirements</div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-participants">Number of Participants</label><input type="text" id="q-participants" placeholder="e.g. 200"></div>
+            <div class="field-group"><label for="q-samples">Number of Samples</label><input type="text" id="q-samples" placeholder="e.g. 5,000 images"></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-duration">Duration <span class="optional">(if video)</span></label><input type="text" id="q-duration" placeholder="e.g. 10 seconds per clip"></div>
+            <div class="field-group"><label for="q-geography">Geography</label><input type="text" id="q-geography" placeholder="e.g. India, urban + rural"></div>
+          </div>
+          <div class="field-group"><label for="q-demographics">Demographics <span class="optional">(optional)</span></label><textarea id="q-demographics" rows="2" placeholder="Age range, gender balance, etc."></textarea></div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-environment">Environment</label><input type="text" id="q-environment" placeholder="e.g. indoor, outdoor, vehicle"></div>
+            <div class="field-group"><label for="q-device">Device</label><input type="text" id="q-device" placeholder="e.g. smartphone, DSLR, sensor"></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-camera">Camera <span class="optional">(optional)</span></label><input type="text" id="q-camera"></div>
+            <div class="field-group"><label for="q-resolution">Resolution <span class="optional">(optional)</span></label><input type="text" id="q-resolution" placeholder="e.g. 1080p"></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-framerate">Frame Rate <span class="optional">(optional)</span></label><input type="text" id="q-framerate" placeholder="e.g. 30fps"></div>
+            <div class="field-group"><label for="q-metadata">Metadata Requirements <span class="optional">(optional)</span></label><input type="text" id="q-metadata"></div>
+          </div>
+          <div class="field-group"><label for="q-annotation">Annotation Requirements <span class="optional">(optional)</span></label><textarea id="q-annotation" rows="2"></textarea></div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" data-step="4">
+          <div class="form-step-label">Step 4 of 6</div>
+          <div class="form-step-title">Quality Requirements</div>
+          <div class="field-group"><label for="q-quality">Customer-Defined Quality Requirements</label><textarea id="q-quality" rows="3" placeholder="Describe any specific quality standards for your project"></textarea></div>
+          <div class="field-group"><label for="q-review">Review Requirements <span class="optional">(optional)</span></label><textarea id="q-review" rows="2"></textarea></div>
+          <div class="field-group"><label for="q-acceptance">Acceptance Criteria <span class="optional">(optional)</span></label><textarea id="q-acceptance" rows="2"></textarea></div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step" data-step="5">
+          <div class="form-step-label">Step 5 of 6</div>
+          <div class="form-step-title">Timeline</div>
+          <div class="field-row">
+            <div class="field-group"><label for="q-start">Expected Start Date</label><input type="date" id="q-start"></div>
+            <div class="field-group"><label for="q-delivery">Expected Delivery Date</label><input type="date" id="q-delivery"></div>
+          </div>
+          <div class="field-group">
+            <label for="q-urgency">Urgency</label>
+            <select id="q-urgency">
+              <option>Flexible</option>
+              <option>Standard</option>
+              <option>Urgent</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="form-step" data-step="6">
+          <div class="form-step-label">Step 6 of 6</div>
+          <div class="form-step-title">Additional Details</div>
+          <div class="field-group"><label for="q-description">Project Description</label><textarea id="q-description" rows="4" placeholder="Tell us about your model and how this data will be used" required></textarea></div>
+          <div class="field-group"><label for="q-tech-specs">Technical Specifications <span class="optional">(optional)</span></label><textarea id="q-tech-specs" rows="2"></textarea></div>
+          <div class="field-group">
+            <label for="q-sop">Is an SOP (Standard Operating Procedure) Available? <span class="optional">(optional)</span></label>
+            <select id="q-sop">
+              <option value="Not sure">Not sure</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="field-group"><label for="q-additional">Additional Requirements <span class="optional">(optional)</span></label><textarea id="q-additional" rows="2"></textarea></div>
+          <label class="consent-checkbox">
+            <input type="checkbox" id="q-consent" required>
+            <span>I agree that the information provided may be used to respond to this business inquiry.</span>
+          </label>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-secondary" id="btn-back" style="visibility:hidden;">Back</button>
+          <button type="button" class="btn btn-primary" id="btn-next">Continue</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit" style="display:none;">Submit Request</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="dataset-success" style="display:none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Request Received</h3>
+        <p>Thank you — our team will review your requirements and follow up to discuss the right collection approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js?v=3"></script>
+<script src="js/layout.js?v=4"></script>
+<script src="js/request-dataset-form.js?v=3"></script>
+</body>
+</html>

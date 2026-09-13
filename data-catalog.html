@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Catalog — Veridata</title>
+<meta name="description" content="Explore Veridata's real-world data collection capabilities. This is a capability catalog, not a marketplace — availability is subject to project requirements.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Data Catalog</div>
+    <span class="eyebrow">Data Catalog</span>
+    <h1>Explore Collection Capabilities</h1>
+    <p>Explore the types of datasets that can be designed and collected around customer requirements. These are illustrative collection specifications, not a ready-to-buy inventory.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice-box" style="max-width:820px; margin:0 auto 34px;">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>This catalog describes collection capabilities, not existing datasets. Volumes, scope and availability shown below are examples only and are subject to project-specific requirements.</span>
+    </div>
+    <div class="grid grid-3" id="catalog-grid"></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container text-center">
+    <span class="eyebrow">Ready to Scope a Project?</span>
+    <h2 class="section-heading" style="margin:0 auto;">Request a Custom Collection Specification</h2>
+    <div class="cta-row" style="justify-content:center; margin-top:26px;">
+      <a href="request-dataset.html" class="btn btn-primary">Request a Dataset</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const catalogEntries = [
+    { category: "Facial", media: "Images and video", geography: "Customer-defined", metadata: "Device, lighting, pose, capture conditions", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Computer Vision", media: "Images and video", geography: "Customer-defined", metadata: "Object class, scene, condition tags", annotation: "Bounding boxes / segmentation", availability: "Pilot or project-based collection" },
+    { category: "Image", media: "Photographic images", geography: "Customer-defined", metadata: "Device, environment, lighting", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Video", media: "Short and long-form video", geography: "Customer-defined", metadata: "Activity, duration, camera angle", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Egocentric", media: "First-person video", geography: "Customer-defined", metadata: "Device, task, environment", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Robotics & Physical AI", media: "Video and sensor logs", geography: "Customer-defined", metadata: "Environment, object, task", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Autonomous Driving", media: "Multi-camera driving video", geography: "Customer-defined", metadata: "Route, weather, traffic density", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Human Activity", media: "Video and image sequences", geography: "Customer-defined", metadata: "Activity type, environment", annotation: "Customer-defined", availability: "Pilot or project-based collection" },
+    { category: "Custom", media: "Any combination", geography: "Customer-defined", metadata: "Fully custom schema", annotation: "Customer-defined", availability: "Custom collection available" }
+  ];
+  document.getElementById("catalog-grid").innerHTML = catalogEntries.map(e => `
+    <div class="catalog-card">
+      <span class="catalog-tag">Example Collection Specification</span>
+      <h3 style="font-size:17px;">${e.category}</h3>
+      <div class="catalog-spec">
+        <div><b>Media</b><span>${e.media}</span></div>
+        <div><b>Collection type</b><span>Participant-based custom collection</span></div>
+        <div><b>Geography</b><span>${e.geography}</span></div>
+        <div><b>Metadata</b><span>${e.metadata}</span></div>
+        <div><b>Annotation</b><span>${e.annotation}</span></div>
+      </div>
+      <span class="availability-badge">${e.availability}</span>
+    </div>
+  `).join("");
+});
+</script>
+</body>
+</html>

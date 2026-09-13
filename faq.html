@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Veridata</title>
+<meta name="description" content="Frequently asked questions about Veridata's data collection, privacy, quality and pilot process.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / FAQ</div>
+    <span class="eyebrow">FAQ</span>
+    <h1>Frequently Asked Questions</h1>
+    <p>Answers to common questions about how we collect, handle and deliver real-world data.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px;">
+
+    <div class="faq-category-label">General</div>
+    <div class="faq-item">
+      <div class="faq-question">What does Veridata actually do? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>We design and run custom real-world data collection programs for AI companies — covering participant recruitment, collection, curation, annotation, quality control, privacy review and delivery.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you have ready-made datasets available for purchase? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>No. We build collection programs around each customer's specification rather than selling from a fixed inventory. Our data catalog page shows illustrative collection capabilities, not ready-to-buy datasets.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What types of data can you collect? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Facial and biometric data, computer vision data, images, video, egocentric/first-person data, robotics and physical AI data, autonomous driving data, human activity data, and custom categories designed for your specific project.</p></div>
+    </div>
+
+    <div class="faq-category-label">Privacy &amp; Consent</div>
+    <div class="faq-item">
+      <div class="faq-question">How is participant consent handled? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Every participant is informed of the purpose, usage and handling of their data and provides consent before any collection takes place. Consent processes are defined per project. See our Privacy &amp; Consent page for details.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I upload biometric data through this website? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>No. This website does not accept public biometric uploads. Custom collection is planned and executed on a per-project basis with defined consent procedures.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How long is data retained? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Retention periods and deletion procedures are defined per project and communicated to participants as part of the consent process.</p></div>
+    </div>
+
+    <div class="faq-category-label">Quality &amp; Process</div>
+    <div class="faq-item">
+      <div class="faq-question">What quality guarantees do you offer? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Quality criteria — including accuracy thresholds and acceptance standards — are defined per project. We validate against your defined criteria at every pipeline stage rather than promising a fixed universal number.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do I need to start with a pilot? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>It's strongly recommended for larger projects. A pilot lets you validate methodology, quality and delivery format at small scale before committing to full collection.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How long does a typical project take? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Timelines depend on data type, volume, geography and complexity. We provide a project-specific timeline after reviewing your requirements.</p></div>
+    </div>
+
+    <div class="faq-category-label">Working With Us</div>
+    <div class="faq-item">
+      <div class="faq-question">How do I start a project? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Submit a request through our Request a Dataset form, or contact us directly. We'll follow up to scope your requirements and recommend a pilot or full project approach.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I become a data collection participant? <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-answer"><p>Yes — you can register your interest through our Join the Participant Network page. This records interest only and does not collect biometric samples or guarantee participation.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container text-center">
+    <span class="eyebrow">Still Have Questions?</span>
+    <h2 class="section-heading" style="margin:0 auto;">We're Happy to Help</h2>
+    <div class="cta-row" style="justify-content:center; margin-top:26px;">
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".faq-item").forEach(item => {
+    const q = item.querySelector(".faq-question");
+    const a = item.querySelector(".faq-answer");
+    q.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(other => {
+        if (other !== item) {
+          other.classList.remove("open");
+          other.querySelector(".faq-answer").style.maxHeight = null;
+        }
+      });
+      if (isOpen) {
+        item.classList.remove("open");
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add("open");
+        a.style.maxHeight = a.scrollHeight + "px";
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

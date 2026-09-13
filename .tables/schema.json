@@ -1,0 +1,301 @@
+[
+  {
+    "name": "contact_inquiries",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text",
+        "description": "Unique ID"
+      },
+      {
+        "name": "full_name",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "text"
+      },
+      {
+        "name": "company",
+        "type": "text"
+      },
+      {
+        "name": "subject",
+        "type": "text"
+      },
+      {
+        "name": "message",
+        "type": "rich_text"
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "options": [
+          "New",
+          "Under Review",
+          "Contacted",
+          "Qualified",
+          "Closed"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dataset_requests",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "full_name",
+        "type": "text"
+      },
+      {
+        "name": "company",
+        "type": "text"
+      },
+      {
+        "name": "business_email",
+        "type": "text"
+      },
+      {
+        "name": "job_title",
+        "type": "text"
+      },
+      {
+        "name": "country",
+        "type": "text"
+      },
+      {
+        "name": "dataset_types",
+        "type": "array"
+      },
+      {
+        "name": "other_dataset_type",
+        "type": "text"
+      },
+      {
+        "name": "num_participants",
+        "type": "text"
+      },
+      {
+        "name": "num_samples",
+        "type": "text"
+      },
+      {
+        "name": "duration",
+        "type": "text"
+      },
+      {
+        "name": "geography",
+        "type": "text"
+      },
+      {
+        "name": "demographics",
+        "type": "rich_text"
+      },
+      {
+        "name": "environment",
+        "type": "text"
+      },
+      {
+        "name": "device",
+        "type": "text"
+      },
+      {
+        "name": "camera",
+        "type": "text"
+      },
+      {
+        "name": "resolution",
+        "type": "text"
+      },
+      {
+        "name": "frame_rate",
+        "type": "text"
+      },
+      {
+        "name": "metadata_requirements",
+        "type": "rich_text"
+      },
+      {
+        "name": "annotation_requirements",
+        "type": "rich_text"
+      },
+      {
+        "name": "quality_requirements",
+        "type": "rich_text"
+      },
+      {
+        "name": "review_requirements",
+        "type": "rich_text"
+      },
+      {
+        "name": "acceptance_criteria",
+        "type": "rich_text"
+      },
+      {
+        "name": "start_date",
+        "type": "text"
+      },
+      {
+        "name": "delivery_date",
+        "type": "text"
+      },
+      {
+        "name": "urgency",
+        "type": "text",
+        "options": [
+          "Flexible",
+          "Standard",
+          "Urgent"
+        ]
+      },
+      {
+        "name": "project_description",
+        "type": "rich_text"
+      },
+      {
+        "name": "technical_specifications",
+        "type": "rich_text"
+      },
+      {
+        "name": "sop_availability",
+        "type": "text",
+        "options": [
+          "Yes",
+          "No",
+          "Not sure"
+        ]
+      },
+      {
+        "name": "additional_requirements",
+        "type": "rich_text"
+      },
+      {
+        "name": "consent_agree",
+        "type": "bool"
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "options": [
+          "New",
+          "Under Review",
+          "Contacted",
+          "Qualified",
+          "Pilot",
+          "Converted",
+          "Closed"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "participant_applications",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "full_name",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "text"
+      },
+      {
+        "name": "country",
+        "type": "text"
+      },
+      {
+        "name": "city",
+        "type": "text"
+      },
+      {
+        "name": "age_range",
+        "type": "text"
+      },
+      {
+        "name": "languages",
+        "type": "text"
+      },
+      {
+        "name": "device_type",
+        "type": "text"
+      },
+      {
+        "name": "availability",
+        "type": "text"
+      },
+      {
+        "name": "preferred_categories",
+        "type": "array"
+      },
+      {
+        "name": "consent_future_contact",
+        "type": "bool"
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "options": [
+          "New",
+          "Under Review",
+          "Contacted",
+          "Qualified",
+          "Closed"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "pilot_requests",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "full_name",
+        "type": "text"
+      },
+      {
+        "name": "company",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "text"
+      },
+      {
+        "name": "dataset_type",
+        "type": "text"
+      },
+      {
+        "name": "project_description",
+        "type": "rich_text"
+      },
+      {
+        "name": "timeline",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "options": [
+          "New",
+          "Under Review",
+          "Contacted",
+          "Qualified",
+          "Pilot",
+          "Converted",
+          "Closed"
+        ]
+      }
+    ]
+  }
+]

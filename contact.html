@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Veridata</title>
+<meta name="description" content="Contact Veridata to discuss a custom real-world data collection project.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <span class="eyebrow">Contact</span>
+    <h1>Let's Discuss Your Data Requirements</h1>
+    <p>Whether you have a defined project or just an early idea, tell us what you're building and we'll help figure out the right approach.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div class="form-shell" style="margin:0;">
+        <div class="form-step-title">Send Us a Message</div>
+        <form id="contactForm">
+          <div class="field-group">
+            <label for="c-name">Full Name</label>
+            <input type="text" id="c-name" required>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label for="c-company">Company <span class="optional">(optional)</span></label>
+              <input type="text" id="c-company">
+            </div>
+            <div class="field-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" required>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="c-subject">Subject</label>
+            <select id="c-subject" required>
+              <option value="">Select one</option>
+              <option>Custom Collection Inquiry</option>
+              <option>Facial &amp; Biometric Data</option>
+              <option>Pilot Program</option>
+              <option>Privacy &amp; Consent Question</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+        <div class="form-success" id="contact-success" style="display:none;">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Message Sent</h3>
+          <p>Thank you for reaching out — we'll respond within 1-2 business days.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="margin-bottom:20px;">
+          <h3><i class="fa-solid fa-envelope"></i>Email</h3>
+          <p style="color:var(--color-ink-soft);" id="contact-email-slot"></p>
+        </div>
+        <div class="panel" style="margin-bottom:20px;">
+          <h3><i class="fa-solid fa-location-dot"></i>Location</h3>
+          <p style="color:var(--color-ink-soft);" id="contact-location-slot"></p>
+        </div>
+        <div class="panel">
+          <h3><i class="fa-solid fa-user-plus"></i>Interested in Becoming a Participant?</h3>
+          <p style="color:var(--color-ink-soft); font-size:14.5px;">Register your interest for future data collection opportunities.</p>
+          <a href="join-participant-network.html" class="card-link">Join the Participant Network <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cfg = window.companyConfig || {};
+  document.getElementById("contact-email-slot").textContent = cfg.email;
+  document.getElementById("contact-location-slot").textContent = cfg.location;
+
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = "Sending...";
+    const payload = {
+      full_name: document.getElementById("c-name").value,
+      company: document.getElementById("c-company").value,
+      email: document.getElementById("c-email").value,
+      subject: document.getElementById("c-subject").value,
+      message: document.getElementById("c-message").value,
+      status: "New"
+    };
+    try {
+      const res = await fetch("tables/contact_inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error();
+      form.style.display = "none";
+      document.getElementById("contact-success").style.display = "block";
+    } catch (err) {
+      alert("There was a problem sending your message. Please try again or email us directly.");
+      btn.disabled = false; btn.textContent = "Send Message";
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+my-app/node_modules/
+
+# Next.js build output
+my-app/.next/
+my-app/out/
+
+# Environment and logs
+*.log
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/

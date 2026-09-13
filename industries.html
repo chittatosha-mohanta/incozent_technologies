@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries — Veridata</title>
+<meta name="description" content="Industries and customer groups Veridata's real-world data collection programs support: AI & ML, computer vision, robotics, autonomous vehicles, identity & biometrics, deepfake detection, digital humans, multimodal AI.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Industries</div>
+    <span class="eyebrow">Industries</span>
+    <h1>Built for the Teams Building AI</h1>
+    <p>We support a range of AI-driven industries with real-world data collection programs designed around each field's specific requirements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4" id="industries-full-grid"></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container text-center">
+    <span class="eyebrow">Don't See Your Industry?</span>
+    <h2 class="section-heading" style="margin:0 auto;">We Design Custom Collection Programs</h2>
+    <p class="section-sub" style="margin:16px auto 0;">If your use case doesn't fit a standard category, we can build a collection methodology specifically for it.</p>
+    <div class="cta-row" style="justify-content:center; margin-top:26px;">
+      <a href="solutions/custom-data-collection.html" class="btn btn-primary">Discuss a Custom Collection</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=4"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const el = document.getElementById("industries-full-grid");
+  el.innerHTML = window.industriesData.map(i => `
+    <div class="card industry-card">
+      <div class="icon-badge"><i class="${i.icon}"></i></div>
+      <h3>${i.name}</h3>
+      <p>${i.desc}</p>
+    </div>
+  `).join("");
+});
+</script>
+</body>
+</html>
