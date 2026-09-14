@@ -118,21 +118,20 @@ document.addEventListener("DOMContentLoaded", function () {
       status: "New"
     };
 
-    try {
-      const res = await fetch("tables/dataset_requests", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error("submit failed");
-      document.querySelector(".form-shell form").style.display = "none";
-      document.getElementById("form-progress").style.display = "none";
-      document.getElementById("dataset-success").style.display = "block";
-    } catch (err) {
-      alert("There was a problem submitting your request. Please try again or contact us directly.");
-      btnSubmit.disabled = false;
-      btnSubmit.textContent = "Submit Request";
-    }
+    window.submitIncozentForm(
+      "Dataset Requests",
+      payload,
+      function () {
+        document.querySelector(".form-shell form").style.display = "none";
+        document.getElementById("form-progress").style.display = "none";
+        document.getElementById("dataset-success").style.display = "block";
+      },
+      function () {
+        alert("There was a problem submitting your request. Please try again or email us directly at chittatoshamohanta@incozent.in");
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = "Submit Request";
+      }
+    );
   });
 
   function val(id) {

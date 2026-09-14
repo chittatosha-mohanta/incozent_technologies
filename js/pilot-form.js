@@ -22,19 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
       status: "New"
     };
 
-    try {
-      const res = await fetch("tables/pilot_requests", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error("Request failed");
-      form.style.display = "none";
-      document.getElementById("pilot-success").style.display = "block";
-    } catch (err) {
-      alert("There was a problem submitting your request. Please try again or email us directly.");
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Submit Pilot Request";
-    }
+    window.submitIncozentForm(
+      "Pilot Requests",
+      payload,
+      function () {
+        form.style.display = "none";
+        document.getElementById("pilot-success").style.display = "block";
+      },
+      function () {
+        alert("There was a problem submitting your request. Please try again or email us directly at chittatoshamohanta@incozent.in");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Pilot Request";
+      }
+    );
   });
 });

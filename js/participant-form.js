@@ -34,18 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
       status: "New"
     };
 
-    try {
-      const res = await fetch("tables/participant_applications", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error();
-      form.style.display = "none";
-      document.getElementById("participant-success").style.display = "block";
-    } catch (err) {
-      alert("There was a problem submitting your registration. Please try again.");
-      btn.disabled = false; btn.textContent = "Register Interest";
-    }
+    window.submitIncozentForm(
+      "Participant Applications",
+      payload,
+      function () {
+        form.style.display = "none";
+        document.getElementById("participant-success").style.display = "block";
+      },
+      function () {
+        alert("There was a problem submitting your registration. Please try again or email us directly at chittatoshamohanta@incozent.in");
+        btn.disabled = false; btn.textContent = "Register Interest";
+      }
+    );
   });
 });

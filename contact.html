@@ -91,6 +91,7 @@
 <script src="js/config.js?v=5"></script>
 <script src="content/solutions-data.js"></script>
 <script src="js/layout.js?v=5"></script>
+<script src="js/form-submit.js?v=5"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const cfg = window.companyConfig || {};
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("contact-location-slot").textContent = cfg.location;
 
   const form = document.getElementById("contactForm");
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = "Sending...";
@@ -113,19 +114,19 @@ document.addEventListener("DOMContentLoaded", function () {
       message: document.getElementById("c-message").value,
       status: "New"
     };
-    try {
-      const res = await fetch("tables/contact_inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error();
-      form.style.display = "none";
-      document.getElementById("contact-success").style.display = "block";
-    } catch (err) {
-      alert("There was a problem sending your message. Please try again or email us directly.");
-      btn.disabled = false; btn.textContent = "Send Message";
-    }
+
+    window.submitIncozentForm(
+      "Contact Inquiries",
+      payload,
+      function () {
+        form.style.display = "none";
+        document.getElementById("contact-success").style.display = "block";
+      },
+      function () {
+        alert("There was a problem sending your message. Please try again or email us directly at " + (cfg.email || "chittatoshamohanta@incozent.in"));
+        btn.disabled = false; btn.textContent = "Send Message";
+      }
+    );
   });
 });
 </script>
