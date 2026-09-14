@@ -5,7 +5,12 @@
  */
 window.submitIncozentForm = async function (formType, payload, successCallback, errorCallback) {
   payload.form_type = formType;
-  payload.sheet_name = formType;
+  // Route to Sheet 1 or Sheet 2 as requested
+  if (formType === "Participant Applications") {
+    payload.sheet_name = "Sheet 2 - Participant Form";
+  } else {
+    payload.sheet_name = "Sheet 1 - Client Requirements";
+  }
   payload.submitted_at = new Date().toLocaleString();
 
   const endpoint = window.companyConfig && window.companyConfig.googleSheetWebhookUrl;

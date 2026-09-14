@@ -20,7 +20,21 @@ function doPost(e) {
   lock.tryLock(10000);
 
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var ss = null;
+    try {
+      ss = SpreadsheetApp.getActiveSpreadsheet();
+    } catch (err) {}
+
+    // Fallback: If standalone project, find or create the spreadsheet in Google Drive
+    if (!ss) {
+      var files = DriveApp.getFilesByName("Incozent Leads & Inquiries");
+      if (files.hasNext()) {
+        ss = SpreadsheetApp.open(files.next());
+      } else {
+        ss = SpreadsheetApp.create("Incozent Leads & Inquiries");
+      }
+    }
+
     var data = {};
 
     // Parse incoming payload
@@ -34,8 +48,16 @@ function doPost(e) {
       data = e.parameter;
     }
 
-    // Identify sheet name from form_type
-    var sheetName = data.sheet_name || data.form_type || "Submissions";
+    // Determine target sheet: Sheet 1 - Client Requirements OR Sheet 2 - Participant Form
+    var sheetName = data.sheet_name;
+    if (!sheetName) {
+      if (data.form_type === "Participant Applications") {
+        sheetName = "Sheet 2 - Participant Form";
+      } else {
+        sheetName = "Sheet 1 - Client Requirements";
+      }
+    }
+
     var sheet = ss.getSheetByName(sheetName);
 
     // If sheet tab doesn't exist yet, automatically create it with styled headers

@@ -14,7 +14,7 @@ const companyConfig = {
   linkedin: "#",
   github: "#",
   geography: "India-first, with future international collection support",
-  googleSheetWebhookUrl: "", // Paste your Google Apps Script Web App URL here
+  googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwdkLppNbCZYo9au0esoMz2UxOBys6lCYtoxptGFGk4jUc20jPc1jq5gXgeRHmetZnDuw/exec",
   year: new Date().getFullYear(),
 };
 
