@@ -5,9 +5,11 @@
  */
 window.submitIncozentForm = async function (formType, payload, successCallback, errorCallback) {
   payload.form_type = formType;
-  // Route to Sheet 1 or Sheet 2 as requested
+  // Route to Sheet 1, Sheet 2, or Sheet 3 as requested
   if (formType === "Participant Applications") {
     payload.sheet_name = "Sheet 2 - Participant Form";
+  } else if (formType === "Pilot Requests") {
+    payload.sheet_name = "Sheet 3 - Pilot Requests";
   } else {
     payload.sheet_name = "Sheet 1 - Client Requirements";
   }

@@ -48,11 +48,13 @@ function doPost(e) {
       data = e.parameter;
     }
 
-    // Determine target sheet: Sheet 1 - Client Requirements OR Sheet 2 - Participant Form
+    // Determine target sheet: Sheet 1 - Client Requirements, Sheet 2 - Participant Form, or Sheet 3 - Pilot Requests
     var sheetName = data.sheet_name;
     if (!sheetName) {
       if (data.form_type === "Participant Applications") {
         sheetName = "Sheet 2 - Participant Form";
+      } else if (data.form_type === "Pilot Requests") {
+        sheetName = "Sheet 3 - Pilot Requests";
       } else {
         sheetName = "Sheet 1 - Client Requirements";
       }
