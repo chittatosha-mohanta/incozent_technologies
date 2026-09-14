@@ -105,6 +105,14 @@
             </a>
           </div>
           <p class="footer-desc">${cfg.tagline}. ${cfg.geography}.</p>
+          <div class="footer-contact-info" style="margin-top:14px; font-size:14px; display:flex; flex-direction:column; gap:6px;">
+            <a href="mailto:${cfg.email}" style="color:var(--color-ink-soft); display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--color-ink-soft)'">
+              <i class="fa-regular fa-envelope" style="color:var(--color-primary-light,#38bdf8);"></i> ${cfg.email}
+            </a>
+            <span style="color:var(--color-ink-soft); font-size:13px; display:inline-flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-location-dot" style="color:var(--color-primary-light,#38bdf8);"></i> ${cfg.location}
+            </span>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Solutions</h4>

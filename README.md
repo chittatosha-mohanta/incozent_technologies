@@ -29,7 +29,7 @@
 
 - **Company Name**: Incozent Technologies
 - **Founder**: Chittatosha Mohanta
-- **Primary Inquiries**: `contact@incozent.com`
+- **Primary Inquiries**: `chittatoshamohanta@incozent.in`
 - **Headquarters**: Bhubaneswar, Odisha, India (Global Delivery)
 - **Positioning**: Scalable, ethically-sourced human, computer vision, and physical AI datasets with strict quality verification and consent frameworks.
 
@@ -179,7 +179,7 @@ Visit [http://localhost:3000](http://localhost:3000).
 
 For custom dataset engineering, pilot requests, and partnership queries:
 
-- **Website**: [incozent.com](mailto:contact@incozent.com)
-- **Email**: `contact@incozent.com`
+- **Website**: [incozent.in](https://incozent.in)
+- **Email**: `chittatoshamohanta@incozent.in`
 - **GitHub**: [github.com/chittatosha-mohanta/incozent_technologies](https://github.com/chittatosha-mohanta/incozent_technologies)
 - **Location**: Bhubaneswar, Odisha, India
