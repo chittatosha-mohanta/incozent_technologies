@@ -114,7 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
       technical_specifications: val("q-tech-specs"),
       sop_availability: val("q-sop"),
       additional_requirements: val("q-additional"),
-      consent_agree: document.getElementById("q-consent").checked,
+      consent_service: document.getElementById("q-consent-service").checked,
+      consent_marketing: document.getElementById("q-consent-marketing").checked,
+      consent_notice: document.getElementById("q-consent-notice").checked,
       status: "New"
     };
 

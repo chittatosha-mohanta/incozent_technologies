@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
       device_type: document.getElementById("p-device").value,
       availability: document.getElementById("p-availability").value,
       preferred_categories: selected,
-      consent_future_contact: document.getElementById("p-consent").checked,
+      consent_service: document.getElementById("p-consent-service").checked,
+      consent_marketing: document.getElementById("p-consent-marketing").checked,
+      consent_notice: document.getElementById("p-consent-notice").checked,
       status: "New"
     };
 

@@ -127,10 +127,25 @@
             </select>
           </div>
           <div class="field-group"><label for="q-additional">Additional Requirements <span class="optional">(optional)</span></label><textarea id="q-additional" rows="2"></textarea></div>
-          <label class="consent-checkbox">
-            <input type="checkbox" id="q-consent" required>
-            <span>I agree that the information provided may be used to respond to this business inquiry.</span>
-          </label>
+          
+          <!-- DPDP Granular Consent Checkboxes (Unticked & Per-Purpose) -->
+          <div class="consent-group">
+            <div class="consent-group-title">
+              <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Data Privacy &amp; Statutory Consent (DPDP Act, India)
+            </div>
+            <label class="consent-item">
+              <input type="checkbox" id="q-consent-service" required>
+              <span>I consent to Incozent processing my submitted personal and project details strictly for evaluating and scoping this dataset inquiry. <span class="consent-badge-req">Mandatory</span></span>
+            </label>
+            <label class="consent-item">
+              <input type="checkbox" id="q-consent-marketing">
+              <span>I consent to receiving technical whitepapers, multimodal dataset benchmarks, and relevant AI data updates. <span class="consent-badge-opt">Optional</span></span>
+            </label>
+            <label class="consent-item">
+              <input type="checkbox" id="q-consent-notice" required>
+              <span>I have read, understood, and accept the <a href="privacy-policy.html" target="_blank">Privacy Notice</a> and <a href="terms.html" target="_blank">Terms of Use</a>. <span class="consent-badge-req">Mandatory</span></span>
+            </label>
+          </div>
         </div>
 
         <div class="form-nav">

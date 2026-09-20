@@ -58,6 +58,26 @@
             <label for="c-message">Message</label>
             <textarea id="c-message" rows="5" required></textarea>
           </div>
+
+          <!-- DPDP Granular Consent Checkboxes (Unticked & Per-Purpose) -->
+          <div class="consent-group">
+            <div class="consent-group-title">
+              <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Consent &amp; Privacy Terms (DPDP Act, India)
+            </div>
+            <label class="consent-item">
+              <input type="checkbox" id="c-consent-service" required>
+              <span>I consent to Incozent processing my submitted personal details strictly to respond to this commercial inquiry. <span class="consent-badge-req">Mandatory</span></span>
+            </label>
+            <label class="consent-item">
+              <input type="checkbox" id="c-consent-marketing">
+              <span>I agree to receive occasional updates, AI collection case studies, and technical newsletters. <span class="consent-badge-opt">Optional</span></span>
+            </label>
+            <label class="consent-item">
+              <input type="checkbox" id="c-consent-notice" required>
+              <span>I have read and agree to the <a href="privacy-policy.html" target="_blank">Privacy Notice</a> and <a href="terms.html" target="_blank">Terms of Use</a>. <span class="consent-badge-req">Mandatory</span></span>
+            </label>
+          </div>
+
           <button type="submit" class="btn btn-primary btn-block">Send Message</button>
         </form>
         <div class="form-success" id="contact-success" style="display:none;">
@@ -112,6 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
       email: document.getElementById("c-email").value,
       subject: document.getElementById("c-subject").value,
       message: document.getElementById("c-message").value,
+      consent_service: document.getElementById("c-consent-service").checked,
+      consent_marketing: document.getElementById("c-consent-marketing").checked,
+      consent_notice: document.getElementById("c-consent-notice").checked,
       status: "New"
     };
 

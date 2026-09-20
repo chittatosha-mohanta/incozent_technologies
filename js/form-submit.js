@@ -5,15 +5,24 @@
  */
 window.submitIncozentForm = async function (formType, payload, successCallback, errorCallback) {
   payload.form_type = formType;
-  // Route to Sheet 1, Sheet 2, or Sheet 3 as requested
+  
+  // Retrieve current DPDP cookie/consent state sitewide
+  if (window.getDPDPConsentState && typeof window.getDPDPConsentState === "function") {
+    payload.dpdp_banner_consent = window.getDPDPConsentState();
+  }
+
+  // Route to Sheet 1, Sheet 2, Sheet 3, or Sheet 4 as requested
   if (formType === "Participant Applications") {
     payload.sheet_name = "Sheet 2 - Participant Form";
   } else if (formType === "Pilot Requests") {
     payload.sheet_name = "Sheet 3 - Pilot Requests";
+  } else if (formType === "Data Rights Requests") {
+    payload.sheet_name = "Sheet 4 - Data Rights Requests";
   } else {
     payload.sheet_name = "Sheet 1 - Client Requirements";
   }
   payload.submitted_at = new Date().toLocaleString();
+  payload.consent_timestamp = new Date().toISOString();
 
   const endpoint = window.companyConfig && window.companyConfig.googleSheetWebhookUrl;
 
@@ -34,7 +43,8 @@ window.submitIncozentForm = async function (formType, payload, successCallback, 
       "Contact Inquiries": "tables/contact_inquiries",
       "Dataset Requests": "tables/dataset_requests",
       "Participant Applications": "tables/participant_applications",
-      "Pilot Requests": "tables/pilot_requests"
+      "Pilot Requests": "tables/pilot_requests",
+      "Data Rights Requests": "tables/data_rights_requests"
     };
     const targetUrl = tableMap[formType] || "tables/contact_inquiries";
     const res = await fetch(targetUrl, {
@@ -53,3 +63,4 @@ window.submitIncozentForm = async function (formType, payload, successCallback, 
     }
   }
 };
+

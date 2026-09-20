@@ -1,0 +1,189 @@
+/* ==========================================================================
+   DPDP Compliance UI Elements: Consent Checkboxes, Banner & Grievance Badges
+   ========================================================================== */
+
+/* Consent Checkbox Groups */
+.consent-group {
+  margin: 22px 0;
+  padding: 16px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.consent-group-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.consent-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+  line-height: 1.45;
+  cursor: pointer;
+  user-select: none;
+}
+
+.consent-item input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.consent-item a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.consent-badge-req {
+  font-size: 11px;
+  background: rgba(36, 84, 255, 0.1);
+  color: var(--color-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.consent-badge-opt {
+  font-size: 11px;
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--color-ink-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Sitewide DPDP Privacy & Cookie Banner */
+.dpdp-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  animation: slideUpBanner 0.35s ease forwards;
+}
+
+@keyframes slideUpBanner {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.dpdp-banner-content {
+  flex: 1;
+}
+
+.dpdp-banner-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dpdp-banner-desc {
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+
+.dpdp-banner-desc a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.dpdp-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.dpdp-btn-accept {
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dpdp-btn-accept:hover { background: var(--color-primary-dark); }
+
+.dpdp-btn-reject {
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dpdp-btn-reject:hover { background: #e2e8f0; }
+
+@media (max-width: 768px) {
+  .dpdp-banner {
+    flex-direction: column;
+    align-items: stretch;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 16px;
+  }
+  .dpdp-banner-actions {
+    justify-content: flex-end;
+  }
+}
+
+/* Grievance Card */
+.grievance-card {
+  border: 1px solid #c7d2fe;
+  background: #f5f7ff;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 24px 0;
+}
+.grievance-card h4 {
+  font-size: 18px;
+  color: #1e1b4b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

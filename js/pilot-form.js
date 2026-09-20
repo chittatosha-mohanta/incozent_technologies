@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
       dataset_type: document.getElementById("pilot-dataset-type").value,
       timeline: document.getElementById("pilot-timeline").value,
       project_description: document.getElementById("pilot-desc").value,
+      consent_service: document.getElementById("pilot-consent-service").checked,
+      consent_marketing: document.getElementById("pilot-consent-marketing").checked,
+      consent_notice: document.getElementById("pilot-consent-notice").checked,
       status: "New"
     };
 
