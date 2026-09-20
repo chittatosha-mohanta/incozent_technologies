@@ -63,10 +63,26 @@
           <label>Preferred Collection Categories <span class="optional">(optional)</span></label>
           <div class="checkbox-grid" id="participant-categories-grid"></div>
         </div>
-        <label class="consent-checkbox">
-          <input type="checkbox" id="p-consent" required>
-          <span>I consent to being contacted about future data collection opportunities that may match my profile.</span>
-        </label>
+
+        <!-- DPDP Granular Consent Checkboxes (Unticked & Per-Purpose) -->
+        <div class="consent-group">
+          <div class="consent-group-title">
+            <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Participant Consent (DPDP Act, India)
+          </div>
+          <label class="consent-item">
+            <input type="checkbox" id="p-consent-service" required>
+            <span>I consent to Incozent storing my profile information to evaluate my eligibility and contact me for future consented data collection opportunities. <span class="consent-badge-req">Mandatory</span></span>
+          </label>
+          <label class="consent-item">
+            <input type="checkbox" id="p-consent-marketing">
+            <span>I agree to receive general news, announcements, and contributor updates from Incozent. <span class="consent-badge-opt">Optional</span></span>
+          </label>
+          <label class="consent-item">
+            <input type="checkbox" id="p-consent-notice" required>
+            <span>I confirm I have read and agree to the <a href="privacy-policy.html" target="_blank">Privacy Notice</a> and understand I can withdraw consent at any time via the <a href="data-rights.html" target="_blank">Data Rights Portal</a>. <span class="consent-badge-req">Mandatory</span></span>
+          </label>
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block">Register Interest</button>
       </form>
       <div class="form-success" id="participant-success" style="display:none;">

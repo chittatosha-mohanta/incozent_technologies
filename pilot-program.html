@@ -108,6 +108,26 @@
           <label for="pilot-desc">Project Description</label>
           <textarea id="pilot-desc" rows="4" placeholder="Briefly describe your model, target data and pilot goals" required></textarea>
         </div>
+
+        <!-- DPDP Granular Consent Checkboxes (Unticked & Per-Purpose) -->
+        <div class="consent-group">
+          <div class="consent-group-title">
+            <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Consent &amp; Privacy Terms (DPDP Act, India)
+          </div>
+          <label class="consent-item">
+            <input type="checkbox" id="pilot-consent-service" required>
+            <span>I consent to Incozent processing my submitted personal and company details strictly to evaluate and scope this pilot request. <span class="consent-badge-req">Mandatory</span></span>
+          </label>
+          <label class="consent-item">
+            <input type="checkbox" id="pilot-consent-marketing">
+            <span>I agree to receive communications regarding new data collection programs and pilot methodologies. <span class="consent-badge-opt">Optional</span></span>
+          </label>
+          <label class="consent-item">
+            <input type="checkbox" id="pilot-consent-notice" required>
+            <span>I have read and agree to the <a href="privacy-policy.html" target="_blank">Privacy Notice</a> and <a href="terms.html" target="_blank">Terms of Use</a>. <span class="consent-badge-req">Mandatory</span></span>
+          </label>
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block">Submit Pilot Request</button>
       </form>
       <div class="form-success" id="pilot-success" style="display:none;">

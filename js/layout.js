@@ -138,21 +138,28 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Get Started</h4>
+          <h4>Legal &amp; Privacy</h4>
           <ul>
-            <li><a href="${pfx}request-dataset.html">Request a Dataset</a></li>
-            <li><a href="${pfx}pilot-program.html">Start a Pilot</a></li>
-            <li><a href="${pfx}join-participant-network.html">Join Participant Network</a></li>
-            <li><a href="${pfx}contact.html">Contact Us</a></li>
+            <li><a href="${pfx}privacy-policy.html">Privacy Notice (DPDP)</a></li>
+            <li><a href="${pfx}terms.html">Terms of Use</a></li>
+            <li><a href="${pfx}data-rights.html">Data Rights Portal</a></li>
+            <li><a href="${pfx}cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="mailto:${cfg.email}">Grievance Redressal</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; ${cfg.year} ${cfg.fullName || cfg.name}. All rights reserved.</span>
+        <div>
+          <span>&copy; ${cfg.year} ${cfg.fullName || cfg.name}. All rights reserved.</span>
+          <span style="display:block; font-size:12px; color:var(--color-ink-faint); margin-top:4px;">
+            Grievance Officer: Chittatosha Mohanta | <a href="mailto:${cfg.email}" style="color:inherit; text-decoration:underline;">${cfg.email}</a> | DPDP Act (India) Compliant
+          </span>
+        </div>
         <div class="footer-legal-links">
-          <a href="${pfx}privacy-policy.html">Privacy Policy</a>
+          <a href="${pfx}privacy-policy.html">Privacy Notice</a>
           <a href="${pfx}terms.html">Terms</a>
-          <a href="${pfx}cookie-policy.html">Cookie Policy</a>
+          <a href="${pfx}data-rights.html">Exercise Data Rights</a>
+          <a href="${pfx}cookie-policy.html">Cookies</a>
         </div>
       </div>
     </div>`;
@@ -166,6 +173,21 @@
       fav.type = "image/png";
       fav.href = window.location.pathname.includes("/solutions/") ? "../assets/favicon.png" : "assets/favicon.png";
       document.head.appendChild(fav);
+    }
+
+    // Inject DPDP CSS if not present
+    if (!document.querySelector("link[href*='dpdp.css']")) {
+      const dpdpCss = document.createElement("link");
+      dpdpCss.rel = "stylesheet";
+      dpdpCss.href = window.location.pathname.includes("/solutions/") ? "../css/dpdp.css" : "css/dpdp.css";
+      document.head.appendChild(dpdpCss);
+    }
+
+    // Inject DPDP Consent Banner script if not present
+    if (!document.querySelector("script[src*='consent-banner.js']")) {
+      const dpdpScript = document.createElement("script");
+      dpdpScript.src = window.location.pathname.includes("/solutions/") ? "../js/consent-banner.js" : "js/consent-banner.js";
+      document.body.appendChild(dpdpScript);
     }
 
     const headerEl = document.getElementById("site-header");

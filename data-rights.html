@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Rights Portal — Incozent Technologies (DPDP Act)</title>
+<meta name="description" content="Exercise your statutory data principal rights under India's Digital Personal Data Protection Act, 2023. Request access, correction, erasure, or consent withdrawal.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/dpdp.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Data Rights Portal</div>
+    <span class="eyebrow">Data Principal Rights</span>
+    <h1>Exercise Your Data Rights</h1>
+    <p>Under the <strong>Digital Personal Data Protection Act, 2023 (India)</strong>, you are entitled to request access to, correction of, or erasure of your personal data, or to withdraw previously given consent.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+
+      <div class="form-shell" style="margin:0;">
+        <div class="form-step-title">Submit a Data Rights Request</div>
+        <form id="dataRightsForm">
+          
+          <div class="field-group">
+            <label for="dr-name">Full Name</label>
+            <input type="text" id="dr-name" placeholder="Your registered full name" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="dr-email">Registered Email Address</label>
+              <input type="email" id="dr-email" placeholder="Email used during form submission" required>
+            </div>
+            <div class="field-group">
+              <label for="dr-phone">Phone Number <span class="optional">(optional)</span></label>
+              <input type="tel" id="dr-phone" placeholder="For verification purposes">
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="dr-relationship">Your Relationship with Incozent</label>
+            <select id="dr-relationship" required>
+              <option value="">Select one</option>
+              <option value="Commercial Client / Inquirer">Commercial Client / Business Inquirer</option>
+              <option value="Registered Participant">Participant Network Registrant</option>
+              <option value="Website Visitor">General Website Visitor</option>
+              <option value="Authorized Nominee">Authorized Representative / Nominee</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="dr-request-type">Statutory Right Requested</label>
+            <select id="dr-request-type" required>
+              <option value="">Select a right to exercise</option>
+              <option value="Right to Access / Summary">Right to Access — Summary of Personal Data &amp; Processing</option>
+              <option value="Right to Correction">Right to Correction — Rectify Inaccurate or Incomplete Information</option>
+              <option value="Right to Erasure">Right to Erasure — Complete Deletion of Personal Records</option>
+              <option value="Right to Withdraw Consent">Right to Withdraw Consent — Revoke Processing Consent</option>
+              <option value="Grievance Redressal">Grievance Escalation — Formal Privacy Complaint</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="dr-details">Specific Details of Your Request</label>
+            <textarea id="dr-details" rows="4" placeholder="Provide any relevant reference dates, form types submitted, or specific correction/erasure requests to help us verify and locate your record" required></textarea>
+          </div>
+
+          <!-- Unbundled, unticked consent checkbox -->
+          <div class="consent-group">
+            <label class="consent-item">
+              <input type="checkbox" id="dr-consent-verification" required>
+              <span>I confirm that I am the Data Principal (or lawful nominee) and consent to Incozent processing the details in this form solely to verify my identity and process this statutory request. <span class="consent-badge-req">Mandatory</span></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Submit Statutory Request</button>
+        </form>
+
+        <div class="form-success" id="dr-success" style="display:none;">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Request Received</h3>
+          <p>Your data rights request has been logged. Our Grievance Officer will review your request, verify identity, and respond within the statutory timeframe (acknowledgment within 48 hours; resolution within 30 days).</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="margin-bottom:20px;">
+          <h3><i class="fa-solid fa-scale-balanced" style="color:var(--color-primary);"></i> How Rights Requests Work</h3>
+          <p style="color:var(--color-ink-soft); font-size:14.5px; margin-top:8px;">
+            Incozent complies strictly with the Digital Personal Data Protection Act, 2023. Requests are subject to identity verification to prevent unauthorized disclosure or malicious deletion.
+          </p>
+          <ul class="stack-list" style="margin-top:14px; font-size:13.5px;">
+            <li><i class="fa-solid fa-check"></i><strong>Identity Check:</strong> We cross-reference the email and details on file.</li>
+            <li><i class="fa-solid fa-check"></i><strong>No Processing Fee:</strong> Exercising your statutory rights is free of charge.</li>
+            <li><i class="fa-solid fa-check"></i><strong>Statutory Timelines:</strong> Formal resolution delivered within 30 days.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3><i class="fa-solid fa-envelope-open-text" style="color:var(--color-accent);"></i> Direct Grievance Channel</h3>
+          <p style="color:var(--color-ink-soft); font-size:14px; margin-top:8px;">
+            You can also contact our Grievance Redressal Officer directly:
+          </p>
+          <div style="font-size:13.5px; margin-top:10px; line-height:1.6;">
+            <strong>Chittatosha Mohanta</strong><br>
+            Grievance Officer, Incozent Technologies<br>
+            Email: <a href="mailto:chittatoshamohanta@incozent.in" style="color:var(--color-primary); font-weight:600;">chittatoshamohanta@incozent.in</a><br>
+            Location: Bhubaneswar, Odisha, India
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/config.js?v=6"></script>
+<script src="content/solutions-data.js"></script>
+<script src="js/layout.js?v=6"></script>
+<script src="js/form-submit.js?v=6"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("dataRightsForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = "Logging Request...";
+
+    const payload = {
+      full_name: document.getElementById("dr-name").value,
+      email: document.getElementById("dr-email").value,
+      phone: document.getElementById("dr-phone").value,
+      relationship: document.getElementById("dr-relationship").value,
+      request_type: document.getElementById("dr-request-type").value,
+      details: document.getElementById("dr-details").value,
+      consent_verification: document.getElementById("dr-consent-verification").checked,
+      status: "Under Review"
+    };
+
+    window.submitIncozentForm(
+      "Data Rights Requests",
+      payload,
+      function () {
+        form.style.display = "none";
+        document.getElementById("dr-success").style.display = "block";
+      },
+      function (err) {
+        alert("There was an error submitting your request. Please email our Grievance Officer directly at chittatoshamohanta@incozent.in");
+        btn.disabled = false;
+        btn.textContent = "Submit Statutory Request";
+      }
+    );
+  });
+});
+</script>
+</body>
+</html>
